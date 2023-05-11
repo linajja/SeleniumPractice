@@ -1,5 +1,8 @@
 package pom.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pom.utils.Driver;
 
 public class Common {
@@ -22,5 +25,14 @@ public class Common {
             e.printStackTrace();
             Thread.currentThread().interrupt();
         }
+    }
+
+    public static void clickOnElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(getElement(locator)).click().build().perform();
+    }
+
+    private static WebElement getElement(By locator) {
+        return Driver.getDriver().findElement(locator);
     }
 }
