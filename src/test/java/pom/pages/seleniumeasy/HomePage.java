@@ -1,4 +1,7 @@
-package pom.pages;
+package pom.pages.seleniumeasy;
+
+import pom.pages.Common;
+import pom.pages.Locators;
 
 public class HomePage {
     public static void open() {
@@ -8,11 +11,11 @@ public class HomePage {
 
     public static void clickOnMenuItemElements() {
         Common.clickOnElementByAction(
-                Locators.Home.menuItemElements);
+                Locators.SeleniumEasy.Home.menuItemElements);
     }
 
     public static void clickOnMenuItemButtons() {
         Common.clickOnElementByAction(
-                Locators.Home.menuItemButton);
+                Locators.SeleniumEasy.Home.menuItemButton);
     }
 }

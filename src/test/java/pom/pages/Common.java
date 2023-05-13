@@ -27,12 +27,33 @@ public class Common {
         }
     }
 
-    public static void clickOnElementByAction(By locator) {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(getElement(locator)).click().build().perform();
-    }
-
     private static WebElement getElement(By locator) {
         return Driver.getDriver().findElement(locator);
+    }
+
+    public static String getTextFromElement(By locator) {
+        return getElement(locator).getText();
+    }
+
+    public static void clickOnElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions
+                .moveToElement(getElement(locator))
+                .click()
+                .build()
+                .perform();
+    }
+
+    public static void clickOnFewElementByAction(By locatorGender, By locatorAge, By locatorButtonGetValues) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions
+                .moveToElement(getElement(locatorGender))
+                .click()
+                .moveToElement(getElement(locatorAge))
+                .click()
+                .moveToElement(getElement(locatorButtonGetValues))
+                .click()
+                .build()
+                .perform();
     }
 }
